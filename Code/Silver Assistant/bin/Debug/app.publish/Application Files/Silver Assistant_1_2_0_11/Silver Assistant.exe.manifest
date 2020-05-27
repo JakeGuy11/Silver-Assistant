@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Silver Assistant.exe" version="1.2.0.11" publicKeyToken="0a4a2d7d9a336767" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Bar.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Silver Assistant" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Silver Assistant.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="700336">
+      <assemblyIdentity name="Newtonsoft.Json" version="12.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>f5ErKKB8Im4L46z7L1fwUFOKugEA+h8L8sOfGh8dqBQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Silver Assistant.exe" size="118232">
+      <assemblyIdentity name="Silver Assistant" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>jOd2+5kum+IwyOvDEbXn3iYcL4ML+dn6ZoWogi/7xOM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Bar.ico" size="27850">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8FAApm207HHx+UEmJzR96ABnisCM4sjaA6F/xVPRDIE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Silver Assistant.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rl5/qDc7Jz+tB+BIbOv9iMGPlRe6YJwrjmU09dnlPcs=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=JAKESLENOVOT530\Jake" issuerKeyHash="2009e743b0f24271b20be5b125d4213e27dc86f8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LimSoZeS8pJxaZ71F/kL0vRIkQ/9E61sxdgzZdtncqc=</DigestValue></Reference></SignedInfo><SignatureValue>P2z+JUx1vvdnKBMBPCWDRGyG//PljKunt4dU9HUpjUjbVdnfge3WCuTxfDrzbcEpTcquUL8OjyZQ4fTsMsevX8a3XrY84r9PIzOopVa4Nr0pU/i+Er9hYLbC67A2U4nQzsfqnaZT6+ZBgBzao6VlvX8mnhQAik/D15JYwYvSvsk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0yL94qrtoTnu0x/p5gGHufwDMny+579krf3rhDoo7tMDgT73V3uo1pECrbEQ/TEUSF27KIK/n+AtFGZ+BD5368cn+QeN0p9HaTdpZkg7SmGm0Z3QBItVf5Dqz6dMIEopP2hE+KiJ7B3H66nRVgzgTkA35WT9/puKCcwgbhKxls0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a77267db6533d8c56cad13fd0f9148f4d20bf917f59e697192f29297a192292e" Description="" Url=""><as:assemblyIdentity name="Silver Assistant.exe" version="1.2.0.11" publicKeyToken="0a4a2d7d9a336767" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=JAKESLENOVOT530\Jake</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>V34HUFpO006pDKRpBNRfbA/0225m+6Z3Wy5ZBWHBwTc=</DigestValue></Reference></SignedInfo><SignatureValue>a7bITp4Htqu93AOcjXV6nxGdagGskNyrwJ+augGtQqM4xAZ4xoH1l+IHlTgAOtQuq2vq5N7XSt4vzoUTYN8q8pxXjFZMR6vtIf3e6qa/ZQDSoDPrZquH9H+H1rcmr88BVgGLCdQjP+HfYlYaOw8YlYZa1+pbxkzJB1Pc+49/xLY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0yL94qrtoTnu0x/p5gGHufwDMny+579krf3rhDoo7tMDgT73V3uo1pECrbEQ/TEUSF27KIK/n+AtFGZ+BD5368cn+QeN0p9HaTdpZkg7SmGm0Z3QBItVf5Dqz6dMIEopP2hE+KiJ7B3H66nRVgzgTkA35WT9/puKCcwgbhKxls0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQSTY6/i70nLxBmV88cOnCOjANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigASgBBAEsARQBTAEwARQBOAE8AVgBPAFQANQAzADAAXABKAGEAawBlMB4XDTIwMDUyNDE1MjYyOVoXDTIxMDUyNDIxMjYyOVowMzExMC8GA1UEAx4oAEoAQQBLAEUAUwBMAEUATgBPAFYATwBUADUAMwAwAFwASgBhAGsAZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA0yL94qrtoTnu0x/p5gGHufwDMny+579krf3rhDoo7tMDgT73V3uo1pECrbEQ/TEUSF27KIK/n+AtFGZ+BD5368cn+QeN0p9HaTdpZkg7SmGm0Z3QBItVf5Dqz6dMIEopP2hE+KiJ7B3H66nRVgzgTkA35WT9/puKCcwgbhKxls0CAwEAATANBgkqhkiG9w0BAQsFAAOBgQBMlFdLwkYABj0xHZ+n8naWuQJenzqGXNGNcByxEmS/BvUt8HwEeKUg4Z4s5UquHE8ikPstGs/d21ctpM577RRvfmg7Gbf+ii/oy4OYF1U1m/VoAOSX/qIxV+zFAeTu4DVHs82xie86mTesIw1KSXFBvD/tGhHel6CX2ptZKVLExA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
