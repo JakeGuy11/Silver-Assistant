@@ -1,0 +1,18 @@
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.csprojAssemblyReference.cache
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\SilverAssistant.d_form.resources
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\SilverAssistant.Properties.Resources.resources
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.csproj.GenerateResource.cache
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Silver Assistant.exe.config
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Silver Assistant.exe.manifest
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Silver Assistant.application
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Silver Assistant.exe
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Silver Assistant.pdb
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.exe.manifest
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.application
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.csproj.CopyComplete
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.exe
+C:\Users\User\source\repos\SilverAssistant\Silver Assistant\obj\Debug\Silver Assistant.pdb
