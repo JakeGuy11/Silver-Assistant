@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SilverAssistant
 {
@@ -31,6 +33,7 @@ namespace SilverAssistant
         public bool HighPriceEnabled = false;
         public bool PeriodicEnabled = true;
         public bool runOnStartup = false;
+        public bool downloadingDAT = false;
         //public bool firstTime = false;
 
         #endregion
@@ -338,11 +341,12 @@ namespace SilverAssistant
 
         #region Price Update Functions
 
-        private void updateFile()
+        private void UpdateFile()
         {
             using (WebClient wc = new WebClient())
             {
-                wc.DownloadFile(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
+                downloadingDAT = true;
+                wc.DownloadFileAsync(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
             }
         }
 
@@ -351,13 +355,25 @@ namespace SilverAssistant
             /*
             if (firstTime)
             {
-               // Thread.Sleep(1000);
+                Thread.Sleep(1000);
                 firstTime = false;
             }
             */
-            updateFile();
-            string ctnt = System.IO.File.ReadAllText(DATpath);
-            return ctnt;
+            UpdateFile();
+            string cnt = "";
+            string errstr = "SOMETHING THATS NOT NULL";
+            while(errstr != "")
+            {
+                try
+                {
+                    cnt = System.IO.File.ReadAllText(DATpath);
+                }
+                catch (Exception e)
+                {
+                    errstr = e.ToString();
+                }
+            }
+            return cnt;
         }
 
         private string readPreferenceJSON()
@@ -393,7 +409,7 @@ namespace SilverAssistant
 
         private void UpdatePriceText()
         {
-            updateFile();
+            UpdateFile();
             Thread.Sleep(1000);
             SilverPriceStr = "$" + parseFile();
             d_priceCurrent.Text = SilverPriceStr;
