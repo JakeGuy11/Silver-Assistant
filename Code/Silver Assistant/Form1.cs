@@ -288,7 +288,7 @@ namespace SilverAssistant
                 PeriodicEnabled = bool.Parse(PeriodicEnabledString);
                 runOnStartup = bool.Parse(runOnStartupString);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Console.WriteLine("Exception Thrown: " + e);
             }
@@ -307,7 +307,7 @@ namespace SilverAssistant
                 tempstrArray = tempstr.ToCharArray();
                 d_highPriceCent.Text = tempstrArray[0].ToString() + tempstrArray[1].ToString() + tempstrArray[2].ToString() + tempstrArray[3].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 d_highPriceCent.Text = "0000";
                 Console.WriteLine("Exception Thrown: " + e);
@@ -319,7 +319,7 @@ namespace SilverAssistant
                 tempstrArray = tempstr.ToCharArray();
                 d_lowPriceCent.Text = tempstrArray[0].ToString() + tempstrArray[1].ToString() + tempstrArray[2].ToString() + tempstrArray[3].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 d_lowPriceCent.Text = "0000";
                 Console.WriteLine("Exception Thrown: " + e);
