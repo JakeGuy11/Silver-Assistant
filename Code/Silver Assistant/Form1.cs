@@ -208,7 +208,7 @@ namespace SilverAssistant
                         RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
                         reg.SetValue("JG11s Silver Price Checker", Application.ExecutablePath.ToString());
                     }
-                    catch (Exception regError)
+                    catch (Exception)
                     {
 
                     }
@@ -220,7 +220,7 @@ namespace SilverAssistant
                         RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
                         reg.DeleteValue("JG11s Silver Price Checker");
                     }
-                    catch (Exception regError)
+                    catch (Exception)
                     {
 
                     }
@@ -279,7 +279,7 @@ namespace SilverAssistant
                 PeriodicEnabled = bool.Parse(PeriodicEnabledString);
                 runOnStartup = bool.Parse(runOnStartupString);
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
             }
@@ -298,7 +298,7 @@ namespace SilverAssistant
                 tempstrArray = tempstr.ToCharArray();
                 d_highPriceCent.Text = tempstrArray[0].ToString() + tempstrArray[1].ToString() + tempstrArray[2].ToString() + tempstrArray[3].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 d_highPriceCent.Text = "0000";
             }
@@ -309,7 +309,7 @@ namespace SilverAssistant
                 tempstrArray = tempstr.ToCharArray();
                 d_lowPriceCent.Text = tempstrArray[0].ToString() + tempstrArray[1].ToString() + tempstrArray[2].ToString() + tempstrArray[3].ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 d_lowPriceCent.Text = "0000";
             }
