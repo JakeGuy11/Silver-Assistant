@@ -346,34 +346,14 @@ namespace SilverAssistant
             using (WebClient wc = new WebClient())
             {
                 downloadingDAT = true;
-                wc.DownloadFileAsync(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
+                wc.DownloadFile(new System.Uri("http://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
             }
         }
 
         private string readSilverDAT()
         {
-            /*
-            if (firstTime)
-            {
-                Thread.Sleep(1000);
-                firstTime = false;
-            }
-            */
             UpdateFile();
-            string cnt = "";
-            string errstr = "SOMETHING THATS NOT NULL";
-            while(errstr != "")
-            {
-                try
-                {
-                    cnt = System.IO.File.ReadAllText(DATpath);
-                }
-                catch (Exception e)
-                {
-                    errstr = e.ToString();
-                }
-            }
-            return cnt;
+            return System.IO.File.ReadAllText(DATpath);
         }
 
         private string readPreferenceJSON()
@@ -391,8 +371,8 @@ namespace SilverAssistant
 
                 //Throws IndexOutOfRange
                 Console.WriteLine(SilverPrice);
-                SilverPrice = silverArray[0]; //This line throws an exception in debug configuration
-                return silverArray[0];
+                SilverPrice = silverArray[1]; //This line throws an exception in debug configuration
+                return silverArray[1];
             }
             catch (System.IndexOutOfRangeException e)
             {
