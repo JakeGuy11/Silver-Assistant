@@ -346,7 +346,7 @@ namespace SilverAssistant
             using (WebClient wc = new WebClient())
             {
                 downloadingDAT = true;
-                wc.DownloadFileAsync(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
+                wc.DownloadFileAsync(new System.Uri("http://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
             }
         }
 
