@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿alrightusing Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -346,7 +346,7 @@ namespace SilverAssistant
             using (WebClient wc = new WebClient())
             {
                 downloadingDAT = true;
-                wc.DownloadFileAsync(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
+                wc.DownloadFile(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
             }
         }
 
