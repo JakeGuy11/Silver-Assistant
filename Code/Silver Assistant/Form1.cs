@@ -19,8 +19,8 @@ namespace SilverAssistant
     public partial class d_form : Form
     {
         #region Globals
-        public string MyPath = @"%APPDATA%\SilverAssistant";
-        public string DATpath = @"%APPDATA%\SilverAssistant\Silver.dat";
+        public const string MyPath = @"%APPDATA%\SilverAssistant";
+        public const string DATpath = @"%APPDATA%\SilverAssistant\Silver.dat";
         public string JSONpath = @"%APPDATA%\SilverAssistant\SilverPreferences.json";
         public string SilverPrice = "XX.XXXX";
         public string SilverPriceStr = "$XX.XXXX";
@@ -31,7 +31,7 @@ namespace SilverAssistant
         public bool HighPriceEnabled = false;
         public bool PeriodicEnabled = true;
         public bool runOnStartup = false;
-        public bool firstTime = false;
+        //public bool firstTime = false;
 
         #endregion
 
@@ -44,7 +44,8 @@ namespace SilverAssistant
             if (!File.Exists(JSONpath))
             {
                 Directory.CreateDirectory(MyPath);
-                firstTime = true;
+                //firstTime = true;
+                //firstTime = true;
                 SilverPreferences myPreference = new SilverPreferences();
 
                 myPreference.pr_highDollars = Int16.Parse(d_highPriceDollar.Text);
@@ -66,7 +67,6 @@ namespace SilverAssistant
                     JSONwriter.Close();
                 }
             }
-            if (firstTime) MessageBox.Show("Thank you for downloading Jake_Guy_11's Silver Assistant! Please have a look at the Info/Instructions tab before attempting to use the many functions of the app.", "Welcome to Jake_Guy_11's Silver Assistant", MessageBoxButtons.OK, MessageBoxIcon.Information);
             UpdatePriceText();
             InitJSONSettings();
             OverwritePreferencesWithJSON();
@@ -180,11 +180,17 @@ namespace SilverAssistant
                 if (File.Exists(JSONpath))
                 {
                     Thread.Sleep(1000);
+                    /*
                     if (firstTime)
                     {
                         Thread.Sleep(1000);
                         firstTime = false;
                     }
+                    */
+                    MessageBox.Show("Thank you for downloading Jake_Guy_11's Silver Assistant! Please have a look at the Info/Instructions tab before attempting to use the many functions of the app.", 
+                        "Welcome to Jake_Guy_11's Silver Assistant", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Information);
                     File.Delete(JSONpath);
                     using (var JSONwriter = new StreamWriter(JSONpath, true))
                     {
@@ -208,7 +214,7 @@ namespace SilverAssistant
                         RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
                         reg.SetValue("JG11s Silver Price Checker", Application.ExecutablePath.ToString());
                     }
-                    catch (Exception regError)
+                    catch (Exception)
                     {
 
                     }
@@ -220,7 +226,7 @@ namespace SilverAssistant
                         RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
                         reg.DeleteValue("JG11s Silver Price Checker");
                     }
-                    catch (Exception regError)
+                    catch (Exception)
                     {
 
                     }
@@ -281,7 +287,7 @@ namespace SilverAssistant
             }
             catch (Exception e)
             {
-
+                Console.WriteLine("Exception Thrown: " + e);
             }
         }
 
@@ -301,6 +307,7 @@ namespace SilverAssistant
             catch (Exception e)
             {
                 d_highPriceCent.Text = "0000";
+                Console.WriteLine("Exception Thrown: " + e);
             }
             d_lowPriceDollar.Text = LowPrice.ToString().Split('.')[0];
             try
@@ -312,6 +319,7 @@ namespace SilverAssistant
             catch (Exception e)
             {
                 d_lowPriceCent.Text = "0000";
+                Console.WriteLine("Exception Thrown: " + e);
             }
             d_highPriceBox.Checked = HighPriceEnabled;
             d_lowPriceBox.Checked = LowPriceEnabled;
@@ -334,18 +342,22 @@ namespace SilverAssistant
         {
             using (WebClient wc = new WebClient())
             {
-                wc.DownloadFileAsync(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
+                wc.DownloadFile(new System.Uri("https://data-asg.goldprice.org/dbXRates/CAD"), DATpath);
             }
         }
 
         private string readSilverDAT()
         {
+            /*
             if (firstTime)
             {
-                Thread.Sleep(1000);
+               // Thread.Sleep(1000);
                 firstTime = false;
             }
-            return System.IO.File.ReadAllText(DATpath);
+            */
+            updateFile();
+            string ctnt = System.IO.File.ReadAllText(DATpath);
+            return ctnt;
         }
 
         private string readPreferenceJSON()
@@ -355,11 +367,23 @@ namespace SilverAssistant
 
         private string parseFile()
         {
-            SilverPrice = readSilverDAT().Replace("xagPrice\":", ">");
-            SilverPrice = SilverPrice.Replace(",\"chgXau", " >");
-            string[] silverArray = SilverPrice.Split('>');
-            SilverPrice = silverArray[1];
-            return silverArray[1];
+            try
+            {
+                SilverPrice = readSilverDAT().Replace("xagPrice\":", ">");
+                SilverPrice = SilverPrice.Replace(",\"chgXau", " >");
+                string[] silverArray = SilverPrice.Split('>');
+
+                //Throws IndexOutOfRange
+                Console.WriteLine(SilverPrice);
+                SilverPrice = silverArray[0]; //This line throws an exception in debug configuration
+                return silverArray[0];
+            }
+            catch (System.IndexOutOfRangeException e)
+            {
+                //If this exception is throw, return an empty string for error checking.
+                Console.WriteLine("Exception thrown: " + e);
+                return string.Empty;
+            }
         }
 
         private void d_updatePricesButton_Click(object sender, EventArgs e)
@@ -380,11 +404,13 @@ namespace SilverAssistant
 
         #region Links
 
+        //Open paypal for donations
         private void d_linkToPaypal_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://paypal.me/JakeGuy11");
         }
 
+        //Opens a mail application to send support messages
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("The default mail application will now open. If you have not set it up, you can create your own email to me at Jake_Guy_11@protonmail.ch", "Thank you for contacting me", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -395,6 +421,7 @@ namespace SilverAssistant
 
         #region Help Boxes
 
+        //These functions are used to display help information, in case the user needs it.
         private void d_helpPreferences_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This application offers a notification feature. The first notification setting will notify you with the current silver price periodically. You can receive updates up to 9999 minutes apart. The next feature will notify you when silver is at or above a certain price. Again, this per ounce in Canadian dollars. The feature below this will notify you when silver is at or below a certain price, again per ounce in Canadian dollars. The latter two features will update every five minutes. You can disable any of the above features by unchecking the checkbox beside them and test them by pressing the test button below them. The last feature will set the application to run when your computer starts. This is untested, but will not cause damage to your system. Once you are happy with your settings, press the ‘Save Changes’ button. The application may freeze for up to two seconds, then restart." ,"Preference Help",MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -409,9 +436,9 @@ namespace SilverAssistant
     }
 }
 
-    class SilverPreferences
+    //This struct stores preference data for the user.
+    struct SilverPreferences
     {
-
         public int pr_highDollars;
         public int pr_highCents;
         public int pr_lowDollars;
@@ -421,5 +448,4 @@ namespace SilverAssistant
         public bool pr_showLow;
         public int pr_intervalMins;
         public bool pr_launchOnStartup;
-
     }

@@ -1,0 +1,205 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{CC5B1144-C026-4C5D-9EEF-2E3040F742D9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>silver_assistant</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="Code\packages\Newtonsoft.Json.12.0.3\packageIcon.png" />
+    <Content Include="Code\packages\Tulpep.NotificationWindow.1.1.31\lib\net40\Tulpep.NotificationWindow.dll" />
+    <Content Include="Code\Silver Assistant.sln" />
+    <Content Include="Code\Silver Assistant\Bar.ico" />
+    <Content Include="Code\Silver Assistant\bin\Debug\app.publish\setup.exe" />
+    <Content Include="Code\Silver Assistant\bin\Debug\app.publish\Silver Assistant.exe" />
+    <Content Include="Code\Silver Assistant\bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="Code\Silver Assistant\bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="Code\Silver Assistant\bin\Debug\Silver Assistant.exe" />
+    <Content Include="Code\Silver Assistant\bin\Debug\Silver Assistant.pdb" />
+    <Content Include="Code\Silver Assistant\bin\Debug\TestApp.exe" />
+    <Content Include="Code\Silver Assistant\bin\Debug\TestApp.pdb" />
+    <Content Include="Code\Silver Assistant\bin\Debug\Tulpep.NotificationWindow.dll" />
+    <Content Include="Code\Silver Assistant\obj\Debug\Silver Assistant.csproj.FileListAbsolute.txt" />
+    <Content Include="Code\Silver Assistant\obj\Debug\Silver Assistant.exe" />
+    <Content Include="Code\Silver Assistant\obj\Debug\Silver Assistant.pdb" />
+    <Content Include="Code\Silver Assistant\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Code\Silver Assistant\obj\Debug\TestApp.csproj.FileListAbsolute.txt" />
+    <Content Include="Code\Silver Assistant\obj\Debug\TestApp.exe" />
+    <Content Include="Code\Silver Assistant\obj\Debug\TestApp.pdb" />
+    <Content Include="Code\Silver Assistant\Silver Assistant.csproj" />
+    <Content Include="Code\Silver Assistant\Silver Assistant.csproj.user" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\heads\westmac" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\logs\refs\remotes\origin\westmac" />
+    <None Include=".git\objects\25\970283c87373f6697dee27b3fa14011f2e0165" />
+    <None Include=".git\objects\5f\bd3c79c3b08d2228c66fb54138982b97201d56" />
+    <None Include=".git\objects\ae\bca8adf84e35bf9082a870daa070ba53caa496" />
+    <None Include=".git\objects\d3\53dc103c8f1a255802a101c8a54752e96dd078" />
+    <None Include=".git\objects\f8\889e989e21e52ffb22e9db60df1ef2700838aa" />
+    <None Include=".git\objects\pack\pack-fa895ce433793ec661c6f384f20522142ffa07fc.idx" />
+    <None Include=".git\objects\pack\pack-fa895ce433793ec661c6f384f20522142ffa07fc.pack" />
+    <None Include=".git\ORIG_HEAD" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\heads\westmac" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".git\refs\remotes\origin\westmac" />
+    <None Include="Code\packages\Newtonsoft.Json.12.0.3\.signature.p7s" />
+    <None Include="Code\packages\Newtonsoft.Json.12.0.3\LICENSE.md" />
+    <None Include="Code\packages\Newtonsoft.Json.12.0.3\Newtonsoft.Json.12.0.3.nupkg" />
+    <None Include="Code\packages\Tulpep.NotificationWindow.1.1.31\.signature.p7s" />
+    <None Include="Code\packages\Tulpep.NotificationWindow.1.1.31\Tulpep.NotificationWindow.1.1.31.nupkg" />
+    <None Include="Code\Silver Assistant\App.config" />
+    <None Include="Code\Silver Assistant\bin\Debug\%25APPDATA%25\SilverAssistant\Silver.dat" />
+    <None Include="Code\Silver Assistant\bin\Debug\%25APPDATA%25\SilverAssistant\SilverPreferences.json" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Application Files\Silver Assistant_1_2_0_11\Bar.ico.deploy" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Application Files\Silver Assistant_1_2_0_11\Newtonsoft.Json.dll.deploy" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Application Files\Silver Assistant_1_2_0_11\Silver Assistant.exe.config.deploy" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Application Files\Silver Assistant_1_2_0_11\Silver Assistant.exe.deploy" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Application Files\Silver Assistant_1_2_0_11\Silver Assistant.exe.manifest" />
+    <None Include="Code\Silver Assistant\bin\Debug\app.publish\Silver Assistant.application" />
+    <None Include="Code\Silver Assistant\bin\Debug\Silver Assistant.application" />
+    <None Include="Code\Silver Assistant\bin\Debug\Silver Assistant.exe.config" />
+    <None Include="Code\Silver Assistant\bin\Debug\Silver Assistant.exe.manifest" />
+    <None Include="Code\Silver Assistant\bin\Debug\TestApp.application" />
+    <None Include="Code\Silver Assistant\bin\Debug\TestApp.exe.config" />
+    <None Include="Code\Silver Assistant\bin\Debug\TestApp.exe.manifest" />
+    <None Include="Code\Silver Assistant\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.application" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.csproj.CopyComplete" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.csproj.CoreCompileInputs.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.csproj.GenerateResource.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.csprojAssemblyReference.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\Silver Assistant.exe.manifest" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.application" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.csproj.CopyComplete" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.csproj.CoreCompileInputs.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.csproj.GenerateResource.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.csprojAssemblyReference.cache" />
+    <None Include="Code\Silver Assistant\obj\Debug\TestApp.exe.manifest" />
+    <None Include="Code\Silver Assistant\packages.config" />
+    <None Include="Code\Silver Assistant\Properties\Settings.settings" />
+    <None Include="Code\Silver Assistant\TestApp_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Silver Assistant\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code\Silver Assistant\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Silver Assistant\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Code\Silver Assistant\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Code\Silver Assistant\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Code\Silver Assistant\Program.cs" />
+    <Compile Include="Code\Silver Assistant\Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\Silver Assistant\Properties\Resources.Designer.cs" />
+    <Compile Include="Code\Silver Assistant\Properties\Settings.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Code\Silver Assistant\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Code\Silver Assistant\obj\Debug\SilverAssistant.d_form.resources" />
+    <EmbeddedResource Include="Code\Silver Assistant\obj\Debug\SilverAssistant.Properties.Resources.resources" />
+    <EmbeddedResource Include="Code\Silver Assistant\obj\Debug\TestApp.d_form.resources" />
+    <EmbeddedResource Include="Code\Silver Assistant\obj\Debug\TestApp.Properties.Resources.resources" />
+    <EmbeddedResource Include="Code\Silver Assistant\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
