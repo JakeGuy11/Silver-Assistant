@@ -11,10 +11,6 @@
 *.userosscache
 *.sln.docstates
 *.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
-<<<<<<< HEAD
 *.csproj
 .csproj.Core
 csproj.CoreCompileInputs.cache
@@ -24,6 +20,10 @@ csprojAssemblyReference.cache
 /packages
 /Code/packages
 >>>>>>> 76f4c4b1389a467a3eb868dc107d4afe3827fc50
+=======
+*.csproj
+
+>>>>>>> 75b9373cf2e944ba6e4078b7613dad6624e1c52e
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
