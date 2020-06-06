@@ -17,6 +17,7 @@
 /bin
 /packages
 /Code/packages
+*.csproj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
